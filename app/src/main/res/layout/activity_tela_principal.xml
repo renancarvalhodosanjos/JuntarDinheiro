@@ -7,4 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".TelaPrincipal">
 
+    <!-- TextView para exibir o CPF do usuário -->
+    <TextView
+        android:id="@+id/textViewUserCpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPF do Usuário"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Botão 1 -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Add Gastos"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserCpf"
+        android:onClick="onClickButton1" />
+
+    <!-- Botão 2 -->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Exibir Gastos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toBottomOf="@id/textViewUserCpf"
+        android:onClick="onClickButton2" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

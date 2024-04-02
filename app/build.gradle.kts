@@ -39,9 +39,13 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(files("libs\\mysql-connector-j-8.3.0.jar"))
     implementation(libs.volley)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation(libs.protolite.well.known.types)
+    testImplementation(libs.junit);
+    androidTestImplementation(libs.ext.junit);
+    androidTestImplementation(libs.espresso.core);
+
+
 
 
 }

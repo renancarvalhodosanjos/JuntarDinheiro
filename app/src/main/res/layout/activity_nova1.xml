@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- TextView para exibir o CPF do usuário -->
+    <TextView
+        android:id="@+id/textViewUserCpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPF do Usuário"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Campo de texto para data -->
+    <EditText
+        android:id="@+id/editTextData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data (AAAA-MM-DD)"
+        android:inputType="date"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de seleção para tipo de gasto -->
+    <Spinner
+        android:id="@+id/spinnerTipoGasto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipos_gasto"
+        android:prompt="@string/selecione_tipo_gasto"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de texto para valor -->
+    <EditText
+        android:id="@+id/editTextValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Campo de texto para descrição -->
+    <EditText
+        android:id="@+id/editTextDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botão para inserir os dados -->
+    <Button
+        android:id="@+id/buttonInserir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inserir"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>

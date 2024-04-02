@@ -1,3 +1,61 @@
 <resources>
     <string name="app_name">JuntarDinheiro</string>
+
+    <!-- Outras strings do seu aplicativo -->
+
+    <!-- Tipos de gasto -->
+    <string-array name="tipos_gasto">
+        <item>Academia</item>
+        <item>Alimentação</item>
+        <item>Aluguel</item>
+        <item>Aluguel de Filme</item>
+        <item>Assinatura de Revista</item>
+        <item>Assinaturas</item>
+        <item>Assistência Técnica</item>
+        <item>Café</item>
+        <item>Cinema</item>
+        <item>Combustível</item>
+        <item>Compras Online</item>
+        <item>Conta de Água</item>
+        <item>Conta de Luz</item>
+        <item>Decoração</item>
+        <item>Despesas Médicas</item>
+        <item>Doações</item>
+        <item>Educação</item>
+        <item>Estacionamento</item>
+        <item>Festas</item>
+        <item>Impostos</item>
+        <item>Imprevistos</item>
+        <item>Internet</item>
+        <item>Itens de Beleza</item>
+        <item>Jantares Especiais</item>
+        <item>Lanches</item>
+        <item>Lavanderia</item>
+        <item>Lazer</item>
+        <item>Manutenção do Carro</item>
+        <item>Material Escolar</item>
+        <item>Multa de Trânsito</item>
+        <item>Música</item>
+        <item>Outro</item>
+        <item>Plano de Saúde</item>
+        <item>Presentes</item>
+        <item>Presentes de Aniversário</item>
+        <item>Presentes de Natal</item>
+        <item>Produtos de Limpeza</item>
+        <item>Restaurante</item>
+        <item>Roupas</item>
+        <item>Seguro</item>
+        <item>Supermercado</item>
+        <item>Taxi/Uber</item>
+        <item>Telefone</item>
+        <item>Transporte</item>
+        <item>Transporte Público</item>
+        <item>TV a cabo</item>
+        <item>Viagens</item>
+    </string-array>
+
+
+
+    <!-- Mensagem de seleção de tipo de gasto -->
+    <string name="selecione_tipo_gasto">Selecione o tipo de gasto</string>
 </resources>

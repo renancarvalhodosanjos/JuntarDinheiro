@@ -15,6 +15,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextLogin;
     private EditText editTextPassword;
     private RequestQueue requestQueue;
+    private SessionManager sessionManager; // Adicionando o SessionManager
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         editTextLogin = findViewById(R.id.editTextLogin);
         editTextPassword = findViewById(R.id.editTextPassword);
+
+        sessionManager = new SessionManager(this); // Inicializando o SessionManager
 
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -61,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
     }
 
-
     private void requestLogin() {
-        String url = "http://179.235.190.188:8888/juntardinheiro/check_login.php";
+        String url = Url.BASE_URL + "check_login.php";
 
         // Faz uma requisição POST para o serviço web PHP
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -73,16 +78,28 @@ public class MainActivity extends AppCompatActivity {
                         // Exibe a resposta completa do servidor no Logcat
                         Log.d("MainActivity", "Resposta do servidor: " + response);
 
-                        // Verifica se a resposta contém a palavra "success"
-                        if (response.contains("success")) {
-                            // Se sim, abre a TelaPrincipal
-                            Log.d("MainActivity", "Abrindo TelaPrincipal");
-                            Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
-                            startActivity(intent);
-                        } else {
-                            // Se não, exibe uma mensagem
-                            Log.d("MainActivity", "Resposta do servidor não contém 'success'");
-                            Toast.makeText(MainActivity.this, "Login falhou", Toast.LENGTH_SHORT).show();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            boolean success = jsonObject.getBoolean("success");
+
+                            if (success) {
+                                // Se o login for bem-sucedido, armazena as informações de sessão
+                                String userCpf = jsonObject.getString("user_cpf");
+                                sessionManager.createLoginSession(userCpf);
+
+                                // Abre a TelaPrincipal
+                                Log.d("MainActivity", "Abrindo TelaPrincipal");
+                                Intent intent = new Intent(MainActivity.this, TelaPrincipal.class);
+                                startActivity(intent);
+                            } else {
+                                // Se não, exibe uma mensagem de erro
+                                Log.d("MainActivity", "Login falhou");
+                                Toast.makeText(MainActivity.this, "Login falhou", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e("MainActivity", "Erro ao analisar resposta do servidor: " + e.getMessage());
+                            Toast.makeText(MainActivity.this, "Erro ao analisar resposta do servidor", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -109,3 +126,4 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 }
+
