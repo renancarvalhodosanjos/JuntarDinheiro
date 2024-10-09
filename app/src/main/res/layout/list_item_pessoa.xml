@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Nome da pessoa -->
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textStyle="bold" />
+
+    <!-- CPF da pessoa -->
+    <TextView
+        android:id="@+id/textViewCpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPF" />
+
+    <!-- Telefone da pessoa -->
+    <TextView
+        android:id="@+id/textViewTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone" />
+
+    <!-- Endereço da pessoa -->
+    <TextView
+        android:id="@+id/textViewEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço" />
+
+    <!-- Bairro da pessoa -->
+    <TextView
+        android:id="@+id/textViewBairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bairro" />
+
+    <!-- Cidade da pessoa -->
+    <TextView
+        android:id="@+id/textViewCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade" />
+
+    <!-- CEP da pessoa -->
+    <TextView
+        android:id="@+id/textViewCep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CEP" />
+
+    <!-- RG da pessoa -->
+    <TextView
+        android:id="@+id/textViewRg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RG" />
+
+</LinearLayout>
+

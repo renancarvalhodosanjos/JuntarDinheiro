@@ -15,16 +15,41 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private SessionManager sessionManager;
 
+    // Função para o botão "Add Gastos"
     public void onClickButton1(View view) {
         Intent intent = new Intent(this, NovaActivity1.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
+    // Função para o botão "Exibir Gastos"
     public void onClickButton2(View view) {
         Intent intent = new Intent(this, NovaActivity2.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    // Função para o botão "Adicionar Pessoa"
+    public void onClickButton3(View view) {
+        Intent intent = new Intent(this, AdicionarPessoaActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    // Função para o botão "Buscar Pessoas"
+    public void onClickButton4(View view) {
+        Intent intent = new Intent(this, MostrarPessoasActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    public void onClickButtonJogo1(View view) {
+        Intent intent = new Intent(this, Jogo1.class);
+        startActivity(intent);
+    }
+
+    public void onClickButtonJogo2(View view) {
+        // Ação para o botão Jogo 2
     }
 
 
@@ -64,4 +89,3 @@ public class TelaPrincipal extends AppCompatActivity {
         return cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9);
     }
 }
-
