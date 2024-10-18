@@ -38,6 +38,9 @@ public class AdicionarPessoaActivity extends AppCompatActivity {
         editTextRg = findViewById(R.id.editTextRg);
         editTextTelefone = findViewById(R.id.editTextTelefone);
 
+        // Aplicar a formatação de CPF no campo CPF
+        new CPFFormatter(editTextCpf);
+
         // Configura o botão para inserir dados
         Button buttonAdicionar = findViewById(R.id.buttonAdicionar);
         buttonAdicionar.setOnClickListener(new View.OnClickListener() {
@@ -136,5 +139,4 @@ public class AdicionarPessoaActivity extends AppCompatActivity {
         }
     }
 }
-
 

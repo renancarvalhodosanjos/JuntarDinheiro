@@ -54,6 +54,7 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.PessoaView
         private TextView textViewCidade;
         private TextView textViewCep;
         private TextView textViewRg;
+        private TextView textViewDataNascimento;  // Adicionando TextView para data de nascimento
 
         public PessoaViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -65,6 +66,7 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.PessoaView
             textViewCidade = itemView.findViewById(R.id.textViewCidade);
             textViewCep = itemView.findViewById(R.id.textViewCep);
             textViewRg = itemView.findViewById(R.id.textViewRg);
+            textViewDataNascimento = itemView.findViewById(R.id.textViewDataNascimento);  // Inicializando o TextView para data de nascimento
         }
 
         public void bind(Pessoa pessoa) {
@@ -76,6 +78,7 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.PessoaView
             textViewCidade.setText("Cidade: " + pessoa.getCidade());
             textViewCep.setText("CEP: " + pessoa.getCep());
             textViewRg.setText("RG: " + pessoa.getRg());
+            textViewDataNascimento.setText("Data de Nascimento: " + pessoa.getDataNascimento());  // Definindo a data de nascimento
         }
     }
 }

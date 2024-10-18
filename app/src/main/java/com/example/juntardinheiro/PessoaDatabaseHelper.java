@@ -62,6 +62,7 @@ public class PessoaDatabaseHelper {
             jsonPessoa.put("cidade", pessoa.getCidade());
             jsonPessoa.put("cep", pessoa.getCep());
             jsonPessoa.put("rg", pessoa.getRg());
+            jsonPessoa.put("data_nascimento", pessoa.getDataNascimento());  // Adicionando dataNascimento
 
             JSONObject postDataParams = new JSONObject();
             postDataParams.put("action", "addPessoa");
@@ -141,6 +142,7 @@ public class PessoaDatabaseHelper {
             jsonPessoa.put("cidade", pessoa.getCidade());
             jsonPessoa.put("cep", pessoa.getCep());
             jsonPessoa.put("rg", pessoa.getRg());
+            jsonPessoa.put("data_nascimento", pessoa.getDataNascimento());  // Adicionando dataNascimento
 
             JSONObject postDataParams = new JSONObject();
             postDataParams.put("action", "updatePessoa");

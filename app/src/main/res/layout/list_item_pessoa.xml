@@ -62,5 +62,11 @@
         android:layout_height="wrap_content"
         android:text="RG" />
 
-</LinearLayout>
+    <!-- Data de nascimento da pessoa -->
+    <TextView
+        android:id="@+id/textViewDataNascimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de Nascimento" />
 
+</LinearLayout>
